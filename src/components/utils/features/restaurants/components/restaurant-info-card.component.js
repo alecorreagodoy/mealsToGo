@@ -47,7 +47,7 @@ const Section = styled.View`
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "some restaurant",
-    icon = require("../../../../../../assets/ramen.png"),
+    icon,
     photos = [
       "https://br24.com/wp-content/uploads/Br24_Blog_FoodPhotography_OverheadAngle.jpg",
     ],
@@ -74,10 +74,13 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 CLOSED TEMPORARILY
               </Text>
             )}
-            <Spacer variant="left.large" />
+            <Spacer position="left" size="large" />
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <Spacer variant="left.large" />
-            <Image style={{ width: 16, height: 16 }} source={{ icon }} />
+            <Spacer position="left" size="large" />
+            <Image
+              style={styles.image}
+              source={require("../../../../../../assets/ramen.png")}
+            />
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
@@ -89,4 +92,5 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
 const styles = StyleSheet.create({
   card: { backgroundColor: "white" },
   cover: { padding: 20, backgroundColor: "white" },
+  image: { width: 16, height: 16 },
 });
