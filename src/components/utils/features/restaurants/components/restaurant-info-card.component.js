@@ -20,7 +20,7 @@ import {
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "some restaurant",
-    icon = "../../../../../../assets/ramen.png",
+    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://br24.com/wp-content/uploads/Br24_Blog_FoodPhotography_OverheadAngle.jpg",
     ],
@@ -49,7 +49,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
             </Spacer>
             <Spacer position="left" size="large">
-              <Icon source={require("../../../../../../assets/ramen.png")} />
+              <Icon source={{ uri: icon }} />
             </Spacer>
           </SectionEnd>
         </Section>
