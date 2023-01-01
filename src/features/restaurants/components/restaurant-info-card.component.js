@@ -1,10 +1,10 @@
 import React from "react";
 import { SvgXml } from "react-native-svg";
-import { Spacer } from "../../../../spacer/spacer.component";
-import { Text } from "../../../../typography/text.component";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 
-import star from "../../../../../../assets/star";
-import open from "../../../../../../assets/open";
+import star from "../../../../assets/star";
+import open from "../../../../assets/open";
 
 import {
   RestaurantCard,
@@ -29,15 +29,17 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     rating = 5,
     isClosedTemporarily = true,
   } = restaurant;
+
   const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
-    <RestaurantCard elevation={5}>
+    <RestaurantCard elevation={2}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
+            {ratingArray.map((_, i) => (
               <SvgXml xml={star} width={15} height={15} />
             ))}
           </Rating>

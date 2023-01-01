@@ -1,10 +1,9 @@
-/* eslint-disable prettier/prettier */
-const antwerp = require("./antwerp");
-const chicago = require("./chicago");
-const toronto = require("./toronto");
-const san_francisco = require("./san_francisco");
+import antwerp from "./antwerp.json";
+import chicago from "./chicago.json";
+import toronto from "./toronto.json";
+import san_francisco from "./san_francisco.json";
 
-module.exports.mocks = {
+export const mocks = {
   "51.219448,4.402464": antwerp,
   "43.653225,-79.383186": toronto,
   "41.878113,-87.629799": chicago,
